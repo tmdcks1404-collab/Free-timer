@@ -1,0 +1,1 @@
+# AdSense 승인 후 Google에서 제공하는 실제 ads.txt 내용을 입력하세요.

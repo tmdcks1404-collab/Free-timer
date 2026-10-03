@@ -1,0 +1,10 @@
+{
+  "name": "온라인 타이머",
+  "short_name": "타이머",
+  "description": "무료 온라인 카운트다운 타이머",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#f4f6fb",
+  "icons": []
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f6fb">
+<title>10분 타이머 | 무료 온라인 타이머</title>
+<meta name="description" content="공부, 운동, 요리, 휴식에 활용하는 10분 타이머입니다.">
+<link rel="manifest" href="manifest.webmanifest">
+<!-- AdSense 승인 후 Google에서 제공한 사이트 코드와 광고 코드를 추가하세요. -->
+<style>
+:root{color-scheme:light;--ink:#172033;--muted:#657086;--line:#e1e6ef;--bg:#f4f6fb;--brand:#315efb}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif}
+.wrap{width:min(100% - 28px,820px);margin:0 auto;padding:10px 0 38px}
+header{text-align:center;padding:22px 4px 14px}
+h1{font-size:clamp(25px,6vw,36px);line-height:1.2;margin:8px 0 10px}
+.sub{font-size:15px;line-height:1.6;color:var(--muted);max-width:620px;margin:auto}
+nav{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;padding:10px 0 14px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+nav a{flex:0 0 auto;text-decoration:none;color:#344056;background:white;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:14px}
+.ad{min-height:76px;border:1px dashed #c8cfdd;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;color:#929bad;font-size:13px;margin:12px 0}
+.card{background:#fff;border:1px solid #edf0f6;border-radius:24px;padding:clamp(18px,5vw,34px) 14px;text-align:center;box-shadow:0 12px 36px rgba(20,35,60,.07)}
+.display{font-variant-numeric:tabular-nums;font-size:clamp(64px,19vw,124px);font-weight:780;letter-spacing:-.055em;line-height:1.1;margin:14px 0 24px}
+.presets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:470px;margin:0 auto 18px}
+button{min-height:48px;border:0;border-radius:13px;padding:12px 10px;font-size:16px;font-weight:600;cursor:pointer;touch-action:manipulation;background:#edf1f8;color:var(--ink)}
+button:active{transform:scale(.98)}
+.presets button{font-size:15px}
+.controls{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px;max-width:470px;margin:0 auto 16px}
+button.primary{background:var(--brand);color:white}
+.custom{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:470px;margin:0 auto}
+.custom input{width:100%;min-width:0;height:48px;padding:10px 12px;border:1px solid #d5dce8;border-radius:12px;font-size:16px;background:#fff}
+.custom button{grid-column:1/-1;background:#e5eaff;color:#2447bd}
+.content{background:#fff;border:1px solid #edf0f6;border-radius:18px;padding:22px;margin-top:16px;line-height:1.8}
+.content h2{font-size:20px;line-height:1.4;margin:0 0 8px}.content p{margin:0 0 18px;color:#4c576b}.content p:last-child{margin-bottom:0}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+.links a{display:block;padding:13px 12px;background:white;border:1px solid var(--line);border-radius:12px;color:#344056;text-decoration:none;font-size:14px}
+footer{text-align:center;color:#7a8494;font-size:12px;line-height:1.8;margin-top:24px}
+@media(min-width:600px){.presets{grid-template-columns:repeat(6,minmax(0,1fr))}.links{grid-template-columns:repeat(3,minmax(0,1fr))}.ad{min-height:90px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button:active{transform:none}}
+</style></head>
+<body data-title="10분 타이머"><div class="wrap">
+<header><h1>10분 타이머</h1><div class="sub">공부, 운동, 요리, 휴식에 활용하는 10분 타이머입니다.</div></header>
+<nav aria-label="타이머 종류"><a href="index.html">홈</a><a href="1-minute-timer.html">1분</a><a href="3-minute-timer.html">3분</a><a href="5-minute-timer.html">5분</a><a href="10-minute-timer.html">10분</a><a href="15-minute-timer.html">15분</a><a href="20-minute-timer.html">20분</a><a href="25-minute-timer.html">25분</a><a href="30-minute-timer.html">30분</a><a href="45-minute-timer.html">45분</a><a href="60-minute-timer.html">1시간</a><a href="pomodoro-timer.html">뽀모도로</a><a href="study-timer.html">공부</a><a href="workout-timer.html">운동</a><a href="cooking-timer.html">요리</a></nav>
+<div class="ad" aria-label="광고 영역">광고 영역</div>
+<main class="card" aria-label="카운트다운 타이머">
+<div id="display" class="display" role="timer" aria-live="off">10:00</div>
+<div class="presets" aria-label="빠른 시간 설정"><button type="button" data-min="1">1분</button><button type="button" data-min="5">5분</button><button type="button" data-min="10">10분</button><button type="button" data-min="25">25분</button><button type="button" data-min="30">30분</button><button type="button" data-min="60">1시간</button></div>
+<div class="controls"><button type="button" id="start" class="primary">시작</button><button type="button" id="pause">일시정지</button><button type="button" id="reset">초기화</button></div>
+<div class="custom"><input id="minutes" inputmode="numeric" type="number" min="0" max="999" placeholder="분" aria-label="분"><input id="seconds" inputmode="numeric" type="number" min="0" max="59" placeholder="초" aria-label="초"><button type="button" id="set">시간 설정</button></div>
+</main>
+<div class="ad" aria-label="광고 영역">광고 영역</div>
+<section class="content"><h2>10분 타이머 사용 방법</h2><p>공부, 운동, 요리, 휴식에 활용하는 10분 타이머입니다.</p><h2>휴대폰에서도 간편하게</h2><p>별도 설치 없이 모바일 브라우저에서 바로 사용할 수 있습니다. 자주 사용하는 경우 브라우저 메뉴의 ‘홈 화면에 추가’를 이용하면 앱처럼 빠르게 열 수 있습니다. 브라우저나 기기 설정에 따라 화면이 잠기거나 다른 앱으로 전환되면 알림음이 제한될 수 있습니다.</p></section>
+<section class="links" aria-label="다른 타이머"><a href="index.html">홈</a><a href="1-minute-timer.html">1분</a><a href="3-minute-timer.html">3분</a><a href="5-minute-timer.html">5분</a><a href="15-minute-timer.html">15분</a><a href="20-minute-timer.html">20분</a><a href="25-minute-timer.html">25분</a><a href="30-minute-timer.html">30분</a><a href="45-minute-timer.html">45분</a><a href="60-minute-timer.html">1시간</a><a href="pomodoro-timer.html">뽀모도로</a><a href="study-timer.html">공부</a><a href="workout-timer.html">운동</a><a href="cooking-timer.html">요리</a></section>
+<footer>© 2026 Online Timer<br>개인정보처리방침 · 문의</footer>
+</div><script>
+let initial=600,remaining=initial,timer=null;
+const display=document.getElementById('display');
+function render(){const m=Math.floor(remaining/60),s=remaining%60;display.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');document.title=display.textContent+' | '+document.body.dataset.title;}
+function stop(){clearInterval(timer);timer=null}
+function start(){if(timer||remaining<=0)return;timer=setInterval(()=>{remaining--;render();if(remaining<=0){stop();beep();if('vibrate' in navigator)navigator.vibrate([200,100,200]);}},1000)}
+function beep(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=880;g.gain.value=.08;o.start();o.stop(c.currentTime+.45)}catch(e){}}
+document.getElementById('start').addEventListener('click',start);
+document.getElementById('pause').addEventListener('click',stop);
+document.getElementById('reset').addEventListener('click',()=>{stop();remaining=initial;render()});
+document.querySelectorAll('[data-min]').forEach(b=>b.addEventListener('click',()=>{stop();initial=Number(b.dataset.min)*60;remaining=initial;render()}));
+document.getElementById('set').addEventListener('click',()=>{stop();const m=Math.max(0,Number(document.getElementById('minutes').value)||0),s=Math.min(59,Math.max(0,Number(document.getElementById('seconds').value)||0));if(m===0&&s===0)return;initial=m*60+s;remaining=initial;render()});
+render();
+</script></body></html>
